@@ -1,28 +1,19 @@
 class Solution {
-// By memoization     
-
-    int CalculateFibonnaci(int n , vector<int>& dp){
-        //base case
-       if(n <= 1){
-           return n;
-       } 
- 
-      if(dp[n] != -1){
-          return dp[n];
-      }  
-        
-       return dp[n] = CalculateFibonnaci(n-1, dp)+CalculateFibonnaci(n-2, dp);
-        
-    }
-    
-    
 public:
     int fib(int n) {
-        vector<int> dp(n+1, -1);
-       return CalculateFibonnaci(n,dp);
+        if(n<1){
+            return n;
+        }
+        int prev2= 0;
+        int prev = 1;
+        int curr_i;
+        for(int i =2 ;i<=n;i++){
+            curr_i = prev2 + prev;
+            prev2 = prev;
+            prev = curr_i;    
+        }
+        
+       return prev;
+    
     }
 };
-
-
-// Time complexity : O(n)
-// Space complexity : O(n)+O(n) = O(n)
