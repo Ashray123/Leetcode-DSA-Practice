@@ -1,4 +1,6 @@
 class Solution {
+    //memoization 
+
     private:
          int DistinctWays(int n , vector<int>& dp){
              if(n<=1){
