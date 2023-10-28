@@ -12,6 +12,7 @@ private:
         if(dp[index]!= -1){
       return dp[index];        
         }
+        
    int pickHouse = nums[index]+ calculateMaxRobbingCapacity(index-2,nums, dp);
     int notpickHouse = 0 + calculateMaxRobbingCapacity(index-1, nums, dp);
         
